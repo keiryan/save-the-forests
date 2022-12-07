@@ -10,14 +10,21 @@ export const Card = styled(Base)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+
   background-color: #fff;
   color: #171d11;
   border-radius: 10px;
   padding: 20px;
-  min-width: 250px;
-  max-width: 300px;
+  max-width: ${(props) => (props.id === props.openCard ? "100%" : "300px")};
+  flex: ${(props) => (props.id === props.openCard ? "0 0 40%" : "1 0 20%")};
   height: 300px;
+  transition: all 0.3s ease-in-out;
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 1200px) {
+    flex: ${(props) => (props.id === props.openCard ? "0 0 100%" : "1 0 40%")};
+  }
 `;
 
 export const CardIcon = styled.div`

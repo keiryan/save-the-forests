@@ -13,9 +13,11 @@ import {
   Footer,
   SocialMediaIconContainer,
   SocialMediaIcon,
+  EnsureLegibility,
 } from "./styles.app.js";
 import NavBar from "./NavBar/navbar.js";
 import Card from "./Card/card.js";
+import Gallery from "./Gallery/gallery.js";
 
 export default function App() {
   const [visible, setVisible] = useState({ visible: false });
@@ -37,66 +39,28 @@ export default function App() {
       <LandingPage id="top">
         <LandingPageText> We belive in saving the forests.</LandingPageText>
 
-        <ScrollDownContainer>
-          <ScrollDownText>Scroll Down to learn more</ScrollDownText>
+        <EnsureLegibility>
+          <ScrollDownContainer>
+            <ScrollDownText>Scroll Down to learn more</ScrollDownText>
 
-          <ScrollDown href="#about">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="48px"
-              viewBox="0 0 24 24"
-              width="48px"
-              fill="#fff"
-            >
-              <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
-              <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
-            </svg>
-          </ScrollDown>
-        </ScrollDownContainer>
+            <ScrollDown href="#about">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="48px"
+                viewBox="0 0 24 24"
+                width="48px"
+                fill="#fff"
+              >
+                <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
+              </svg>
+            </ScrollDown>
+          </ScrollDownContainer>
+        </EnsureLegibility>
       </LandingPage>
       <MoreAboutUs id="about">
-        <Card icon="🌲" title="We love trees.">
-          That's right, we love trees! Better yet, we{" "}
-          <strong>
-            <em>need</em>
-          </strong>{" "}
-          trees. They are the foundation of the food chain.
-        </Card>
-
-        <Card icon="🫁" title="Lungs of the earth">
-          Trees are the lungs of the earth. They provide us with oxygen, and
-          they absorb carbon dioxide.
-        </Card>
-
-        <Card icon="🪖" title="Trees Protect">
-          Trees protect us from the elements. They provide us with shade,
-          shelter, and food.
-        </Card>
-
-        <Card icon="🌳" title="60,000 species">
-          Do you know many different types of trees are there? There are over
-          60,000 species of trees in the world.
-        </Card>
-
-        <Card icon="🪚" title="We must protect them">
-          Despite the many trees in the world, we are still losing them at an
-          alarming rate.
-        </Card>
-
-        <Card icon="🏡" title="Trees are homes">
-          Trees are home to massive ecosystems. More than 80% of all land
-          animals and plants live in forests.
-        </Card>
-
-        <Card icon="⛑️" title="Contribute to health">
-          Trees contribute to the health of the soil. They help to prevent soil
-          erosion and desertification.
-        </Card>
-
-        <Card icon="🪴" title="Can you adopt?">
-          Can you adopt a tree? You can adopt a tree and help to protect it. You
-          can also help to plant more trees.
-        </Card>
+        <Gallery/>
+        
       </MoreAboutUs>
       <ScrollUp visible={visible} href="#top">
         <SVG

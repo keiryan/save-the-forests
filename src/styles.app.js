@@ -1,16 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const bounce = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
+import styled from "styled-components";
 
 export const Base = styled.div`
   display: flex;
@@ -38,7 +26,7 @@ export const LandingPage = styled(Section)`
   justify-content: center;
   flex-direction: column;
   color: #fff;
-  background: url("https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+  background: url("https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,17 +44,7 @@ export const LandingPageText = styled.div`
 export const MoreAboutUs = styled(Section)`
   min-height: fit-content;
   background-color: #171d11;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  @media (min-width: 1000px) {
-    align-content: flex-start;
-    padding: 20px 100px;
-  }
 `;
-
-
 
 export const SVG = styled.svg`
   fill: #fff;
@@ -89,6 +67,7 @@ export const ScrollUp = styled.a`
   height: 50px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  z-index: 99;
   &:hover {
     width: 60px;
     height: 60px;
@@ -105,9 +84,6 @@ export const ScrollDownContainer = styled(Base)`
   bottom: 4px;
   font-size: 20px;
   font-weight: bold;
-  @media (max-width: 768px) {
-    bottom: 100px;
-  }
 `;
 
 export const ScrollDownText = styled.div``;
@@ -119,12 +95,26 @@ export const ScrollDown = styled.a`
   text-decoration: none;
   border-radius: 50px;
   margin-top: 20px;
-  animation-name: ${bounce};
+  animation-name: bounce;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   :hover {
     cursor: pointer;
-    /* background-color: rgba(0, 0, 0, 0.3); */
+  }
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
   }
 `;
 
@@ -148,4 +138,46 @@ export const SocialMediaIconContainer = styled.div`
     cursor: pointer;
     transform: translateY(-5px);
   }
+`;
+
+export const EnsureLegibility = styled(Base)`
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(70%, rgba(0, 0, 0, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 255, 0) 0%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 `;
