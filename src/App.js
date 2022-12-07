@@ -16,7 +16,6 @@ import {
   EnsureLegibility,
 } from "./styles.app.js";
 import NavBar from "./NavBar/navbar.js";
-import Card from "./Card/card.js";
 import Gallery from "./Gallery/gallery.js";
 
 export default function App() {
@@ -24,8 +23,8 @@ export default function App() {
 
   // function to toggle visibility of scroll up button
   const toggleVisible = (e) => {
-    const scrolled = e.currentTarget.scrollTop;
-    // console.log(e, e.currentTarget.scrollTop);
+    console.log(e);
+    const scrolled = e.target.documentElement.scrollTop;
     if (scrolled > 300) {
       setVisible({ visible: true });
     } else if (scrolled <= 300) {
@@ -33,8 +32,10 @@ export default function App() {
     }
   };
 
+  window.addEventListener('scroll', toggleVisible);
+
   return (
-    <Container onScroll={toggleVisible}>
+    <Container >
       <NavBar></NavBar>
       <LandingPage id="top">
         <LandingPageText> We belive in saving the forests.</LandingPageText>

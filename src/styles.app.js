@@ -17,7 +17,6 @@ export const Container = styled(Base)`
   background-color: #000;
   position: relative;
   font-family: "sf pro display", sans-serif;
-  overflow: auto;
   scroll-behavior: smooth;
 `;
 

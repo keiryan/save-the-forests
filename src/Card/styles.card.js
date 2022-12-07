@@ -23,7 +23,7 @@ export const Card = styled(Base)`
     cursor: pointer;
   }
   @media (max-width: 1200px) {
-    flex: ${(props) => (props.id === props.openCard ? "0 0 100%" : "1 0 40%")};
+    flex: ${(props) => (props.id === props.openCard ? "0 0 100%" : "1 0 50%")};
   }
 `;
 

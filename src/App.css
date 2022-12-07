@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
@@ -46,11 +50,13 @@
 }
 
 ::-webkit-scrollbar-track {
+  box-shadow: none;
   -webkit-box-shadow: none;
 }
 
 ::-webkit-scrollbar-thumb {
   background: white;
+  box-shadow: none;
   -webkit-box-shadow: none;
 }
 
