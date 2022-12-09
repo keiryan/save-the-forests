@@ -1,4 +1,4 @@
-A landing page for saving the trees!
+A mock landing page for a company devoted to saving trees!
 
 👨‍💻 Live demo here: https://save-the-forests.vercel.app/
 
